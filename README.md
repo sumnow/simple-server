@@ -1,26 +1,22 @@
-# simple-server
+在开发vue的过程中，`npm run build`后生成的文件需要在服务端才可以使用，以往使用的是基于appche的xammp工具来显示，之前本地使用less的时候也是引入`less.min.js`文件，但xammp有些笨重，于是选择用`nodejs`来实现一个简单的本地服务,来查看依赖服务器环境的页面。
 
-一个基于nodejs的简单服务器，除node外，无额外依赖包，用于以来服务器的测试不错。
+nodejs本身已经提供了创建服务的方法`createServer`，但没有提供页面入口，`express`,`koa`等框架提供了，但略复杂。
 
-可以用来配合vue，less，etc.
+因此，写了一个简单的无依赖的服务，用来预览页面。使用方法如下：
 
-比appache xammp要简单易用。
-
-### 使用方法
-
-
-    git clone git@github.com:sumnow/simple-server.git
-
+    git clone https://github.com/sumnow/simple-server.git
     node server.js
+    
+打开浏览器[http://localhost:8080](http://localhost:8080)   即可查看效果。
 
-    将需要使用的文件放置到目录下
+![clipboard.png](/img/bV15JA)
 
+默认服务启动在`8080`端口，预览目录下`index.html`，可以修改`server.js`来改变端口和页面地址。
 
-打开浏览器[http://localhost:8080](http://localhost:8080)
+    var port = 8080;
+    var pagePath = "/index.html"
 
+目前基于这个的FileBlog运行良好~
 
-
-
-
-
-
+项目地址：
+[https://github.com/sumnow/simple-server](https://github.com/sumnow/simple-server)
