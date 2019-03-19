@@ -11,10 +11,12 @@ nodejs本身已经提供了创建服务的方法`createServer`，但没有提供
 
 ![clipboard.png](https://github.com/sumnow/mdPhotos/blob/master/simple-server_01.png)
 
-默认服务启动在`8080`端口，预览目录下`index.html`，可以修改`server.js`来改变端口和页面地址。
+默认服务启动在`8080`端口，预览目录下`index.html`，可以修改`server.js`来改变端口和页面地址.
 
-    var port = 8080;
+    var port = process.argv[2] || 8080;
     var pagePath = "/index.html"
+
+或者在命令行里传递端口号 `node server.js 9527`
 
 目前基于这个的FileBlog运行良好~
 

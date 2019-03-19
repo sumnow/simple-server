@@ -4,8 +4,7 @@ var util = require('util');
 var fs = require('fs');
 var path = require("path");
 var router = require('./fileRoute');
-
-var port = 8080;
+var port = process.argv[2] || 8080;
 var pagePath = "/index.html"
 
 
